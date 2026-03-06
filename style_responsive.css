@@ -1,0 +1,29 @@
+@media only screen and (max-width: 1000px) {
+    #articleText{
+        display: none;
+    }
+    #articleText2{
+        display: block;
+    }
+    #webcam-container{
+        display: none;
+    }
+    #flyingText {
+        display: none;
+    }
+    #circleText {
+        display: none;
+    }
+    #pinkPanel {
+        display: none;
+    }
+    body {
+        background: darkblue;
+    }
+    #latestIssue{
+        display: none;
+    }
+    #image {
+        display: block;
+    }
+}
