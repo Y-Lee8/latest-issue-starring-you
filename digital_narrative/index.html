@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fashion Magazine</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style_responsive.css">
+
+  <!-- Libraries -->
+  <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+</head>
+<body>
+
+  <!-- Latest Issue (Top Left) -->
+  <div id="latestIssue"></div>
+
+  <!-- Pink Panel -->
+  <div id="pinkPanel"></div>
+
+  <!-- Webcam -->
+  <div id="webcam-container"></div>
+
+  <!-- Circular Text -->
+  <div id="circleText">
+    <svg viewBox="0 0 600 600">
+      <defs>
+        <path id="circlePath"
+              d="M300,300 m -210,0 a 210,210 0 1,1 420,0 a 210,210 0 1,1 -420,0"/>
+      </defs>
+      <text>
+        <textPath href="#circlePath" startOffset="50%" text-anchor="middle">
+          Starring You! • Starring You! • Starring You!
+        </textPath>
+      </text>
+    </svg>
+  </div>
+
+  <!-- Article Text -->
+  <div id="articleText">
+    <p>
+      Everyday, we take the time to get ready in the morning and decide what to wear.
+    </p>
+
+    <p>
+      An accessory can add a lot to a person’s style. Something like a 
+      <span class="animateAccessory">hat</span> or 
+      <span class="animateAccessory">glasses</span> 
+      can leave a different impression.
+    </p>
+  </div>
+  <div id="articleText2">
+    <p>
+      404 Error:
+    </p>
+    <p>
+      However, as the saying goes… we shouldn’t merely judge anyone by their appearance.
+      Someone may seem grumpy, but they may be having a rough day. Maybe you can 
+      cheer them up?
+    </p>
+  </div>
+  <img id = "image" src = "./img/flower.jpg">
+  <!-- Flying Text Container -->
+  <div id="flyingText"></div>
+
+  <!-- Hidden labels (Teachable Machine) -->
+  <div id="label-container"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

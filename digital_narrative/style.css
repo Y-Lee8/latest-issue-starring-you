@@ -1,0 +1,183 @@
+/* ================= Fonts ================= */
+@font-face {
+  font-family: 'mainFont';
+  src: url('./font/DigiBop-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'secondaryFont';
+  src: url('./font/PunkCyberDEMO-Regular.ttf') format('truetype');
+}
+
+/* ================= Layout ================= */
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(27,11,76,1) 0%, rgba(60,44,140,1) 21%, rgba(210,168,255,1) 73%);
+}
+
+/* ================= Latest Issue (Top Left, Marquee) ================= */
+#latestIssue {
+  position: fixed;
+  top: 5px;
+  left: 0;
+  font-family: 'mainFont', sans-serif;
+  font-size: clamp(60px,6vw,120px);
+  color: #fff27e;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 6px black;
+  white-space: nowrap;
+  animation: moveRight 10s linear infinite;
+  z-index: 1;
+}
+@keyframes moveRight {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100vw); }
+}
+
+/* ================= Webcam (Circle) ================= */
+#webcam-container {
+  position: fixed;
+  top: 50%;
+  left: 75%;
+  width: 400px;
+  height: 400px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 2;
+}
+#webcam-container canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ================= Circular Text (Starring You) ================= */
+#circleText {
+  position: fixed;
+  top: 50%;
+  left: 75%;
+  width: 600px;
+  height: 600px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 2;
+}
+#circleText svg {
+  width: 100%;
+  height: 100%;
+  animation: rotateCW 20s linear infinite;
+}
+#circleText text {
+  font-family: 'mainFont', sans-serif;
+  font-size: clamp(20px,3vw,40px);
+  fill: #fff27e;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 6px black;
+}
+@keyframes rotateCW { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* ================= Article Text ================= */
+#articleText {
+  position: fixed;
+  bottom: 5%;
+  left: 5%;
+  width: 50vw;
+  font-family: "Verdana", sans-serif;
+  font-size: clamp(30px, 4vw, 35px);
+  line-height: 1.5;
+  color: white;
+  text-align: left;
+  z-index: 0;
+  display: block;
+}
+
+#articleText p { margin-bottom: 1em; }
+
+/* ================= Pink Panel ================= */
+#pinkPanel {
+  position: fixed;
+  top: 0%;
+  left: 65%;
+  width: 500px;
+  height: 100vh;
+  background: #ff4fa3;
+  z-index: 2;
+  display: block;
+}
+
+/* ================= Flying Text ================= */
+#flyingText {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.fly {
+  position: absolute;
+  font-family: "Lucida Console", monospace;
+  font-size: clamp(24px, 4vw, 40px);
+  color: white;
+  text-shadow: 2px 2px 6px black;
+  animation: flyUp 2s linear forwards;
+}
+
+@keyframes flyUp {
+  0% { transform: translateY(0) scale(0.8); opacity: 0; }
+  5% { opacity: 1; }
+  100% { transform: translateY(-20vh); opacity: 0; }
+}
+
+/* Hide Teachable Machine label container */
+#label-container { display:none; }
+
+#articleText2 {
+  display: none;
+  position: fixed;
+  width: 80vw;
+  font-family: "Lucida Console", monospace;
+  font-size: 20px;
+  line-height: 1.5;
+  color: white;
+  text-align: center;;
+  z-index: 1;
+  top: 20%;
+}
+
+.animateAccessory {
+  display: inline-block;
+  font-family: 'secondaryFont', sans-serif;
+  animation: popAccessory 3s infinite;
+}
+
+@keyframes popAccessory {
+
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1) rotate(-5deg);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+
+}
+
+/* Image ================================================ */
+#image {
+  bottom: 20%;
+  position: fixed;
+  width: 300px;
+  z-index: 0;
+  display: none;
+}
